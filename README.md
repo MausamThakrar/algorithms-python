@@ -1,37 +1,30 @@
-from src.sorting import bubble_sort, merge_sort
-from src.searching import linear_search, binary_search
-from src.graphs import bfs, dfs
+# Algorithms and Data Structures in Python
 
+This project contains simple implementations of classic algorithms and data
+structures, together with basic tests.
 
-def test_sorting():
-    arr = [5, 1, 4, 2, 8]
-    expected = [1, 2, 4, 5, 8]
+## Implemented Algorithms
 
-    assert bubble_sort(arr) == expected
-    assert merge_sort(arr) == expected
+- **Sorting**
+  - Bubble sort (O(n²))
+  - Merge sort (O(n log n))
 
+- **Searching**
+  - Linear search (O(n))
+  - Binary search (O(log n))
 
-def test_searching():
-    arr = [1, 2, 4, 5, 8]
-    assert linear_search(arr, 4) == 2
-    assert linear_search(arr, 10) is None
+- **Graph Traversal**
+  - Breadth-first search (BFS)
+  - Depth-first search (DFS)
 
-    assert binary_search(arr, 4) == 2
-    assert binary_search(arr, 10) is None
+## Project Structure
 
-
-def test_graph_traversals():
-    graph = {
-        "A": ["B", "C"],
-        "B": ["D"],
-        "C": ["D"],
-        "D": [],
-    }
-
-    bfs_order = bfs(graph, "A")
-    dfs_order = dfs(graph, "A")
-
-    assert bfs_order[0] == "A"
-    assert set(bfs_order) == {"A", "B", "C", "D"}
-    assert dfs_order[0] == "A"
-    assert set(dfs_order) == {"A", "B", "C", "D"}
+```text
+algorithms-python/
+│── src/
+│   ├── sorting.py
+│   ├── searching.py
+│   └── graphs.py
+│── tests/
+│   └── test_algorithms.py
+└── README.md
